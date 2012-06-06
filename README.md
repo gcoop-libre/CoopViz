@@ -10,8 +10,8 @@ Tematicas a Trabajar
 
 Fuentes de datos para explotar
 ------------------------------
- * Datps de la Aci (Hay que Scrapear los Pdfs)  [[http://www.aciamericas.coop/-Estadisticas-cooperativas-]]
- * Info sobre dominios .coop (Hay que scrapear el sitio) [[http://www.directory.coop/]]
+ * Datps de la Aci (Hay que Scrapear los Pdfs)  http://www.aciamericas.coop/-Estadisticas-cooperativas-
+ * Info sobre dominios .coop (Hay que scrapear el sitio) http://www.directory.coop/
  * Datos Inaes (CSV en el repo)
 
 Herramientas interesantes para utilizar
