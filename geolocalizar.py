@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 import json
 import codecs
@@ -13,17 +14,20 @@ salida = []
 
 for i, coop in enumerate(coops[:300]):
     direccion = "%s, %s %s" % (coop['Direccion'], coop['Localidad'], coop['PROVINCIA'])
+    direccion = direccion.replace(u"Ñ", "N")
     try:
         lat, lng = gmaps.address_to_latlng(direccion)
         precision = 'calle'
         calle += 1
     except:
         direccion = "%s %s" % (coop['Localidad'], coop['PROVINCIA'])
+        direccion = direccion.replace(u"Ñ", "N")
         try:
             lat, lng = gmaps.address_to_latlng(direccion)
             precision = 'localidad'
             localidad += 1
         except:
+            print direccion
             lat,lng = -34.506132,-58.162336 #Rio de La Plata
             precision = 'pais'
             pais += 1
