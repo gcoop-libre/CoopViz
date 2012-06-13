@@ -1,17 +1,18 @@
 var tl;
 $(document).ready(function() {
   var eventSource = new Timeline.DefaultEventSource();
+  var d = Timeline.DateTime.parseIso8601DateTime("2001-06-10");
   var bandInfos = [
     Timeline.createBandInfo({
       eventSource: eventSource,
-      date: "Jun 28 2006 00:00:00 GMT",
+      date: d,
       width: "70%", 
       intervalUnit: Timeline.DateTime.MONTH, 
       intervalPixels: 100
    }),
     Timeline.createBandInfo({
       eventSource: eventSource,
-      date: "Jun 28 2006 00:00:00 GMT",
+      date: d,
       width: "30%", 
       intervalUnit: Timeline.DateTime.YEAR, 
       intervalPixels: 200
@@ -21,7 +22,8 @@ $(document).ready(function() {
   bandInfos[1].highlight = true; 
 
   tl = Timeline.create(document.getElementById("timeline-coops"), bandInfos);
-  Timeline.loadXML("example1.xml", function(xml, url) { eventSource.loadXML(xml, url); });
+//  Timeline.loadJSON("data.json", function(data, url) { console.log(url);console.log(data); eventSource.loadJSON(data, url); });
+  Timeline.loadJSON("cooperativas.json", function(data, url) { console.log(url);console.log(data); eventSource.loadJSON(data, url); });
 });
 
 var resizeTimerID = null;

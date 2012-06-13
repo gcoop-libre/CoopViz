@@ -1,0 +1,15 @@
+{
+  "dateTimeFormat": "iso8601",
+  "events" : [
+    {
+      "id" : "id1",
+      "title" : "EL HOGAR OBRERO COOP DE CONSUMO, EDIFICACION Y CREDITO LTDA",
+      "start" : "2006-09-20",
+    },
+    {
+      "id" : "id5",
+      "title" : "ASOCIACION DE COOPERATIVAS ARGENTINAS COOP LTDA",
+      "start" : "2006-01-12",
+    },
+  ]
+}
