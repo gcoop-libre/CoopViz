@@ -1,0 +1,9 @@
+Flask==0.8
+Jinja2==2.6
+WTForms==1.0.1
+Werkzeug==0.8.3
+flask-peewee==0.5.3
+peewee==0.9.7
+progressbar==2.3
+wsgiref==0.1.2
+wtf-peewee==0.1.3
