@@ -25,6 +25,14 @@ var Log = {
   }
 };
 
+function get_random_color() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+}
 
 function init(){
     //init data
@@ -50,25 +58,27 @@ function init(){
         },
         //Set Node and Edge styles.
         Node: {
-            color: '#ddeeff'
+            overridable: true,
+            color: '#ba00f7',
+            dim: 5,
         },
         Edge: {
-          color: '#C17878',
+          color: '#faba00',//get_random_color(),
           lineWidth:1.5
         },
 
         onBeforeCompute: function(node){
             Log.write("Centrando " + node.name + "...");
-            //Add the relation list in the right column.
-            //This list is taken from the data property of each JSON node.
-            $jit.id('inner-details').innerHTML = node.data.relation;
         },
-        
         //Add the name of the node in the correponding label
         //and a click handler to move the graph.
         //This method is called once, on label creation.
         onCreateLabel: function(domElement, node){
             domElement.innerHTML = node.name;
+
+            //node.Config.color = get_random_color();
+            console.log(node);
+
             domElement.onclick = function(){
                 rgraph.onClick(node.id, {
                     onComplete: function() {
@@ -88,12 +98,12 @@ function init(){
                 style.fontSize = "1.5em";
                 style.color = "#ccc";
             
-            } else if(node._depth = 1){
+            } else if(node._depth == 1){
                 style.fontSize = "1em";
-                style.color = "#ccc";
+                style.color = "#fafafa";
             
             } else if(node._depth == 2){
-                style.fontSize = "1em";
+                style.fontSize = "0.9em";
                 style.color = "#494949";
             
             } else {
@@ -115,7 +125,7 @@ function init(){
     rgraph.compute('end');
     rgraph.fx.animate({
       modes:['polar'],
-      duration: 2000
+      duration: 500
     });
     //end
     //append information about the root relations in the right column
