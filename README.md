@@ -3,6 +3,10 @@ CoopViz
 
 Repositorio para el hackaton del tercer evento de Software Libre y Economia Social 2012.
 
+Puedes ver mas información, demostraciones y el resumen en:
+
+http://gcoop-libre.github.com/CoopViz/
+
 Tematicas a Trabajar
 ---------------------
  * Visualización de datos Geolocalizados sobre cooperativas
