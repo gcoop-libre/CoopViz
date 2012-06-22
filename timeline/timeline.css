@@ -1,4 +1,13 @@
+body {
+  font-family: Helvetica;
+}
+ 
 #timeline-coops {
-  height: 500px;
+  height: 600px;
   border: 1px solid #AAA;
 }
+
+.timeline-event-label {
+  font-size: 0.8em;
+}
+
