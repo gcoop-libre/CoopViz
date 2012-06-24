@@ -258,7 +258,6 @@ form {
 }
 
 img {
-  width: 100%;
   max-width: 100%;
 }
 
@@ -429,3 +428,20 @@ Small Device Styles
   }
 
 }
+
+h5 {
+    margin-top: 2em;
+}
+
+img.preview {
+    float: left; 
+    border: 1px solid #bbb; 
+    margin-right: 1em;
+    width: 200px; 
+    height: 200px;
+}
+
+div.clear {
+    clear: both;
+}
+
