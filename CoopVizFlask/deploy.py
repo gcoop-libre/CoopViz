@@ -35,7 +35,34 @@ def importar_coops():
         print matricula, nombre
         models.Cooperativa.create(nombre=nombre, matricula=matricula)
 
+def importar_fecootra():
+    fed = models.Federacion.create(nombre="Fecootra")
+    data = csv.reader(open('coops-federaciones.csv'))
+    for fila in data:
+        matricula, nombre = fila[2].decode('utf8'), fila[1].decode('utf8')
+        nombre = nombre.title()
+        if matricula.isdecimal():
+            coop = models.Cooperativa.create(nombre=nombre, matricula=matricula)
+            print matricula, nombre, fed.id, coop.id
+            rel = models.CoopFederacion.create(cooperativa=coop, federacion=fed) 
+
+def importar_factic():
+    fed = models.Federacion.create(nombre="Facttic")
+    data = csv.reader(open('coops-federaciones-factic.csv'))
+    for fila in data:
+        matricula, nombre = fila[2].decode('utf8'), fila[1].decode('utf8')
+        nombre = nombre.title()
+        if matricula.isdecimal():
+            coop = models.Cooperativa.create(nombre=nombre, matricula=matricula)
+            print matricula, nombre, fed.id, coop.id
+            rel = models.CoopFederacion.create(cooperativa=coop, federacion=fed)
+    gcoop = models.Cooperativa.select().where(nombre='Gcoop').get()
+    rel = models.CoopFederacion.create(cooperativa=gcoop, federacion=fed)
+
+
 
 if __name__ == '__main__':
     crear_tablas()
-    importar_coops()
+#    importar_coops()
+    importar_fecootra()
+    importar_factic()

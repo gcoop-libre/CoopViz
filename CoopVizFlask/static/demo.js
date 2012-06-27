@@ -54,16 +54,16 @@ function init(){
         Navigation: {
           enable: true,
           panning: true,
-          zooming: 10
+          zooming: 10,
         },
         //Set Node and Edge styles.
         Node: {
             overridable: true,
-            color: '#ba00f7',
+            color: '#acbade',
             dim: 5,
         },
         Edge: {
-          color: '#faba00',//get_random_color(),
+          color: '#ad6f12',//'#e0f8b9',//get_random_color(),
           lineWidth:1.5
         },
 
@@ -96,15 +96,15 @@ function init(){
 
             if (node._depth < 1) {
                 style.fontSize = "1.5em";
-                style.color = "#ccc";
+                style.color = "#e0f8b9";
             
             } else if(node._depth == 1){
                 style.fontSize = "1em";
-                style.color = "#fafafa";
+                style.color = "#e0f8b9";
             
             } else if(node._depth == 2){
                 style.fontSize = "0.9em";
-                style.color = "#494949";
+                style.color = "#e0f8b9";
             
             } else {
                 style.display = 'none';

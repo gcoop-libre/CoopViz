@@ -51,7 +51,7 @@ class Federacion(db.Model):
             'id':self.nombre,
             'name':self.nombre,
             'children':data,
-            'data':{'$type':'star', '$dim':20, '$color':'#00ffba'}
+            'data':{'$type':'star', '$dim':20, '$color':'#112764'}
             }
         return a
 
